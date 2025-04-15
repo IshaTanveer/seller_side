@@ -131,4 +131,12 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    public override fun onStart() {
+        super.onStart()
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            replaceActivity(this, openingActivity::class.java)
+        }
+    }
+
 }
